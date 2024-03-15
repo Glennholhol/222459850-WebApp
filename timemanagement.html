@@ -7,11 +7,10 @@
         <style>
             body {
                 font-family: Arial, sans-serif;
-                margin: 0;
-                padding: 0;
-                background-color: #f8f8f8;
-                color: #333;
                 line-height: 1.6;
+                color: #333;
+                background-color: #f4f4f4;
+                padding: 20px;
             }
             header {
                 background: #333;
@@ -98,6 +97,63 @@
             button[type="button"]:hover {
                 background-color: #0056b3;
             }
+
+            .container {
+                max-width: 800px;
+                margin: auto;
+                overflow: auto;
+                padding: 0 20px;
+            }
+
+            .recipe {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 20px 0;
+                padding: 20px;
+                background: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .recipe img {
+            max-width: 300px;
+            margin-bottom: 20px;
+            }
+
+            .recipe h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            }
+
+            .recipe p {
+            font-size: 18px;
+            }
+
+            .recipe ul {
+            list-style: none;
+            padding: 0;
+            }
+
+            .recipe li {
+            font-size: 16px;
+            line-height: 1.6;
+            }
+
+            button {
+            display: inline-block;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background .2s ease-out;
+            }
+
+            button:hover {
+            background-color: #0056b3;
+            }
+
         </style>
     </head>
     <body>
