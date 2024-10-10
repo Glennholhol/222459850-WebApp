@@ -1,0 +1,223 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>timemanagement</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                line-height: 1.6;
+                color: #333;
+                background-color: #f4f4f4;
+                padding: 20px;
+            }
+            header {
+                background: #333;
+                color: #fff;
+                padding: 1rem;
+                text-align: center;
+            }
+            section {
+                max-width: 800px;
+                margin: auto;
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, o, o.1);
+            }
+            h2 {
+                color: #333;
+
+            }
+            ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            li {
+                margin-bottom: 10px;
+                color: #555;
+            }
+
+            .tip {
+                background: #f9f9f9;
+                padding: 15px;
+                border-radius: 10px;
+                margin-bottom: 20px;
+            }
+
+            .deadline-form {
+                margin-top: 2opx;
+            }
+
+
+            .deadline-form input[type="datetime-local"] {
+                width: 100%;
+                padding: 8px;
+                margin-top: 5px;
+            }
+
+            .deadline-form button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+            .deadline-form button:hover {
+                background-color: #45a049;
+            }
+
+            input[type="checkbox"] {
+                display: inline-block;
+                width: 15px;
+                height: 15px;
+                margin-right: 10px;
+                vertical-align: middle;
+            }
+
+            input[type="time"] {
+                padding: 8px;
+                margin-right: 10px;
+            }
+
+            button[type="button"] {
+                background-color: #007bff;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+
+
+            button[type="button"]:hover {
+                background-color: #0056b3;
+            }
+
+            .container {
+                max-width: 800px;
+                margin: auto;
+                overflow: auto;
+                padding: 0 20px;
+            }
+
+            .recipe {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                margin: 20px 0;
+                padding: 20px;
+                background: #fff;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .recipe img {
+            max-width: 300px;
+            margin-bottom: 20px;
+            }
+
+            .recipe h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            }
+
+            .recipe p {
+            font-size: 18px;
+            }
+
+            .recipe ul {
+            list-style: none;
+            padding: 0;
+            }
+
+            .recipe li {
+            font-size: 16px;
+            line-height: 1.6;
+            }
+
+            button {
+            display: inline-block;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: background .2s ease-out;
+            }
+
+            button:hover {
+            background-color: #0056b3;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <h1>Personal Time Manager</h1>
+        </header>
+        <section>
+            <h2>Start Your Day with a Smile</h2>
+            <p>Effective time management is crucial for productivity and achieving your goals. Do youe best always!</p>
+            <h2>You can Do this All Day</h2>
+            <div class="tip">
+                <h3>Set Clear Goals</h3>
+                <p>Define your short-term & long-term goals. Having a clear direction will guide your tasks and help prioritize your time</p>
+                </div>
+
+                <h2>Life Time Quote</h2>
+                <p>Life isn't about finding yourself, Life is about Creating yourself.</p>
+
+                <h2>To-Do List</h2>
+                <ul id="todo-list">
+                    <li><input type="checkbox"> <label>Set Clear Goals</label></li>
+                    <li><input type="checkbox"> <label>Prioritize Tasks</label></li>
+                    <li><input type="checkbox"> <label>Time for Games</label></li>
+                    <li><input type="checkbox"> <label>Bebe Time</label></li>
+                    <li><input type="checkbox"> <label>Grind Until U do it</label></li>
+                </ul>
+
+                <h2>Time Blocking</h2>
+                <label for="time-block">Set Time Block:</label>
+                <input type="time" id="time-block">
+                <button type="button" onclick="startTimer()">Start Timer</button>
+
+                <div class="deadline-form">
+                    <h2>Set Deadlines</h2>
+                    <form id="deadline-form">
+                        <label for="deadline">Deadline</label>
+                        <input type="datetime-local" id="deadline">
+                        <button type="submit">Set Deadlines</button>
+                    </form>
+                </div>
+        </section>
+
+        <script>
+            function startTimer() {
+                const timeInput = document.getElementById('time-block').value;
+                if (timeInput !== '') {
+                    const [hours, minutes] = timeInput.split(':').map(Number);
+                    const titalSeconds = hours * 3600 + minutes * 60;
+                    setTimeout(() => alert('Time/s up!'), totalSeconds * 1000);
+                } else {
+                    alert('Please enter a valid time.');
+                }
+            }
+
+            document.getElementById('deadline-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const deadlineInput = document.getElementById('deadline').value;
+                if (deadlineInput !== '') {
+                    alert(`Deadline set for ${new Date(deadlineInput).toLocalString()}`);
+                } else {
+                    alert('Please enter a valid deadline.');
+                }
+            });
+        </script>
+        
+    </body>
+    </html>
